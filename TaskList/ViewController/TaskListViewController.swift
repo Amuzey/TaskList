@@ -9,7 +9,7 @@ import UIKit
 
 class TaskListViewController: UITableViewController {
     
-    private let viewContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let viewContext = StorageManager.shared.persistentContainer.viewContext
     
     private let cellID = "task"
     private var taskList: [Task] = []
@@ -110,3 +110,4 @@ extension TaskListViewController {
         return cell
     }
 }
+
