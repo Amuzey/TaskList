@@ -43,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				8A7F193228B3496D00CD2D7D /* StorageManager.swift */,
+				A8B9AC9C28B29E680069665A /* TaskList.xcdatamodeld */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -105,7 +106,6 @@
 				8A7F193828B34D5F00CD2D7D /* Resources */,
 				8A7F193928B34D7700CD2D7D /* Storyboards */,
 				8A7F193728B34D1700CD2D7D /* App */,
-				A8B9AC9C28B29E680069665A /* TaskList.xcdatamodeld */,
 			);
 			path = TaskList;
 			sourceTree = "<group>";
