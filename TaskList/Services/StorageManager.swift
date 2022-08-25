@@ -12,10 +12,7 @@ class StorageManager {
     
     static let shared = StorageManager()
     
-    private init() {}
-    
-    // MARK: - Core Data stack
-    var persistentContainer: NSPersistentContainer = {
+    private var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "TaskList")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -24,6 +21,41 @@ class StorageManager {
         })
         return container
     }()
+    
+    private var viewContext: NSManagedObjectContext
+    
+    private init() {
+        viewContext = persistentContainer.viewContext
+    }
+    
+    // MARK: - CRUD
+    func create(_ taskName: String, completion: (Task) -> Void) {
+        let task = Task(context: viewContext)
+        task.title = taskName
+        completion(task)
+        saveContext()
+    }
+    
+    func fetchData(completion: (Result<[Task], Error>) -> Void) {
+        let fetchRequest = Task.fetchRequest()
+        
+        do {
+            let tasks = try viewContext.fetch(fetchRequest)
+            completion(.success(tasks))
+        } catch let error {
+            completion(.failure(error))
+        }
+    }
+    
+    func update(task: Task, newName: String) {
+        task.title = newName
+        saveContext()
+    }
+    
+    func delete(task: Task) {
+        viewContext.delete(task)
+        saveContext()
+    }
     
     // MARK: - Core Data Saving support
     func saveContext() {

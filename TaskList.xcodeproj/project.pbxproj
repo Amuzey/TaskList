@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A17612028B7EFA6002F2763 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A17611F28B7EFA6002F2763 /* AlertController.swift */; };
 		8A7F193328B3496D00CD2D7D /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7F193228B3496D00CD2D7D /* StorageManager.swift */; };
 		A8B9AC9428B29E680069665A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B9AC9328B29E680069665A /* AppDelegate.swift */; };
 		A8B9AC9628B29E680069665A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B9AC9528B29E680069665A /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A17611F28B7EFA6002F2763 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		8A7F193228B3496D00CD2D7D /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A8B9AC9028B29E680069665A /* TaskList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B9AC9328B29E680069665A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,11 +41,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A17612128B7FA6F002F2763 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A8B9AC9C28B29E680069665A /* TaskList.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8A7F193428B34CF400CD2D7D /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				8A7F193228B3496D00CD2D7D /* StorageManager.swift */,
-				A8B9AC9C28B29E680069665A /* TaskList.xcdatamodeld */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -52,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				A8B9AC9728B29E680069665A /* TaskListViewController.swift */,
+				8A17611F28B7EFA6002F2763 /* AlertController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -105,6 +115,7 @@
 				8A7F193428B34CF400CD2D7D /* Services */,
 				8A7F193828B34D5F00CD2D7D /* Resources */,
 				8A7F193928B34D7700CD2D7D /* Storyboards */,
+				8A17612128B7FA6F002F2763 /* Models */,
 				8A7F193728B34D1700CD2D7D /* App */,
 			);
 			path = TaskList;
@@ -184,6 +195,7 @@
 				A8B9AC9828B29E680069665A /* TaskListViewController.swift in Sources */,
 				8A7F193328B3496D00CD2D7D /* StorageManager.swift in Sources */,
 				A8B9AC9428B29E680069665A /* AppDelegate.swift in Sources */,
+				8A17612028B7EFA6002F2763 /* AlertController.swift in Sources */,
 				A8B9AC9628B29E680069665A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,7 +335,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GBTTU32HS2;
+				DEVELOPMENT_TEAM = 5Z3HCFMYW5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TaskList/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -350,7 +362,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GBTTU32HS2;
+				DEVELOPMENT_TEAM = 5Z3HCFMYW5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TaskList/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
