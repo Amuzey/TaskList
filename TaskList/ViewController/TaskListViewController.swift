@@ -19,7 +19,7 @@ class TaskListViewController: UITableViewController {
         setupNavigationBar()
         fetchData()
     }
-    
+    // MARK: - private Methods
     private func setupNavigationBar() {
         title = "Task List"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -72,7 +72,7 @@ class TaskListViewController: UITableViewController {
         }
     }
 }
-
+// MARK: - UITableViewDataSource
 extension TaskListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         taskList.count
@@ -86,7 +86,7 @@ extension TaskListViewController {
         cell.contentConfiguration = content
         return cell
     }
-    
+    // MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let task = taskList.remove(at: indexPath.row)
@@ -97,11 +97,13 @@ extension TaskListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let task = taskList[indexPath.row]
-        showAlert(task: task)
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+        showAlert(task: task){
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
     }
 }
 
+// MARK: - UIAlertControllel
 extension TaskListViewController {
     
     private func showAlert(task: Task? = nil, completion: (() -> Void)? = nil) {
